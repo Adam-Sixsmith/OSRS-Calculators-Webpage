@@ -11,5 +11,8 @@ document.getElementById("TestButton").addEventListener("click",() => {
     } else {
         let xpNeeded = levelXPmapping[TargetLevel];
         console.log("To reach level " + TargetLevel + ", you need " + xpNeeded + " XP.");
+
+        document.getElementById("outcome").innerHTML = "To reach level " + TargetLevel + ", you need " + xpNeeded.toLocaleString() + " XP."
     }
 });
+
