@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/combatachievementcalc.css">
-    <script type="module" src="/SCIPTS/combatacheivementcalc.js"></script>
+    <script src="/SCIPTS/combatacheivementcalc.js"></script>
     <title>Combat Achievement Calculator</title>
 </head>
 <body>
+    <H1>This Calculator will give you the teir you're currently in and how many points you need until the next teir</H1>
+
+    <label for="easytasks">How many easy tasks have you done?</label>
+    <input type="number" id="easytasks" name="easytasks"><br>
+    <label for="medtasks">How many medium tasks have you done?</label>
+    <input type="number" id="medtasks" name="medtasks"><br>
+    <label for="hardtasks">How many hard tasks have you done?</label>
+    <input type="number" id="hardtasks" name="hadtasks"><br>
+    <label for="elitetasks">How many elite tasks have you done?</label>
+    <input type="number" id="elitetasks" name="elitetasks"><br>
+    <label for="mastertasks">How many master tasks have you done?</label>
+    <input type="number" id="mastertasks" name="mastertasks"><br>
+    <label for="grandmastertasks">How many grand master tasks have you done?</label>
+    <input type="number" id="grandmastertasks" name="grandmastertasks"><br>
+    <button id="casubmit" >Submit</button>
+    <br>
+    <p id="currentTier"></p>
+    <p id="nextTier"></p>
     <a href="/HTML/mainpage.html">Back to main page</a>
 </body>
 </html>
