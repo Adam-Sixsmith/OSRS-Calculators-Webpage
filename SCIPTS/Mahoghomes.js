@@ -6,13 +6,30 @@ document.getElementById("TestButton").addEventListener("click",() => {
 
     let TargetLevel = parseInt(userRequiredLevel);
 
-    if (isNaN(TargetLevel) || TargetLevel <1 || TargetLevel > 99){
-        console.log("Please enter a number between 1 and 99");
-    } else {
-        let xpNeeded = levelXPmapping[TargetLevel];
-        console.log("To reach level " + TargetLevel + ", you need " + xpNeeded + " XP.");
+    let xpNeeded = levelXPmapping[TargetLevel];
 
-        document.getElementById("outcome").innerHTML = "To reach level " + TargetLevel + ", you need " + xpNeeded.toLocaleString() + " XP."
-    }
-});
+    let currentXP = document.getElementById("currentXP").value;
 
+    let xpToLevel = xpNeeded - currentXP
+
+    if (userRequiredLevel < 1 || userRequiredLevel > 99){
+        document.getElementById("outcome").textContent = "Please only submit a number from 1 to 99."
+    } else {    
+        document.getElementById("outcome").innerHTML = "To reach level " + TargetLevel + ", you need " + xpToLevel.toLocaleString() + " XP."
+
+        let averageXpPerContract = 4445
+
+        let totalContracts = xpToLevel / averageXpPerContract
+
+        let roundedNumberOfContacts = Math.ceil(totalContracts)
+
+        document.getElementById("totalContracts").textContent = "You have roughly  " + roundedNumberOfContacts + " contracts left until your level!"
+
+        let averagePlankXp = 344
+
+        let planksUserNeeds = xpToLevel / averagePlankXp
+
+        let roundedNumberOfPlanks = Math.ceil(planksUserNeeds)
+
+        document.getElementById("planksNeeded").textContent = "You have roughly  " + roundedNumberOfPlanks + " planks to get for your level!"
+    }});
